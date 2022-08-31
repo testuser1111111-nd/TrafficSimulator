@@ -180,7 +180,7 @@ namespace TrafficSimulator
             }
         }
         
-        static string ExportCSV(IEnumerable<string[]>? Keys, string PathOfKey = "Keys.csv", string BackupName = "backup.csv")
+        static string ExportCSV(IEnumerable<string[]>? Keys, string PathOfKey = "result.csv")
         {
             try
             {
@@ -204,10 +204,7 @@ namespace TrafficSimulator
                     }
                 }
                 var keys = File.Open(PathOfKey, FileMode.OpenOrCreate);
-                var bkup = File.Open(BackupName, FileMode.OpenOrCreate);
                 keys.Dispose();
-                bkup.Dispose();
-                File.Copy(PathOfKey, BackupName, true);
                 File.WriteAllText(PathOfKey, temp);
                 return "success";
             }
