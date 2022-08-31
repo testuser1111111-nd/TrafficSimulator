@@ -76,7 +76,7 @@ namespace TrafficSimulator
                 a[0] = score.ToString();
                 exportdata.Add(a);
             }
-            ExportCSV(exportdata);
+            Console.WriteLine(ExportCSV(exportdata));
         }
         static void Initialize()
         {
